@@ -15,7 +15,7 @@
         <p>This website has been created as a physical rendering of students' practiced skills and development of 
         expertise in the use of markup language, HTML, amongst others. Below are some concepts being explored in the IT030 class syllabus offered this spring.</p>
         <div>
-            <!-- May be able to use topics listed as navigation buttons or content to be explored throughout the website --> 
+            <!-- topics to be used as inspo for navigation buttons or content to be explored throughout the website --> 
             <ul>
                 <li>HTML Basics</li>
                 <li>Website Styling with CSS</li>
