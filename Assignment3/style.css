@@ -6,14 +6,21 @@
     background-color: #f5f5f5;
     color: #333;
   }
-  
+  /* The specified font-family and color properties on the <body> element, apply to most child elements. This is
+because the value of the font-family property is inherited by child elements, as explained in CH. 10, pg 240. 
+The colors of the  body and all elements housed within in is different from that of the header; this is to demonstrates how CSS works, 
+regarding inheritance and the way the code applies to elements in a manner similar to that of them being placed in a box. Color code is picked
+using a RGB color picker,  CH. 11 pg 251.*/ 
+
   /*Header Styles*/
   header {
     background: #333;
     color: #fff;
     text-align: center;
   }
-    
+  /* The above code can be overriden by an inline CSS or an internal CSS *   
+  /* However, it is important to note that the background color properties are not inherited by child elements. Reference: CH. 10, pg 240 */
+
   /*Footer Styless*/
   footer {
     background: #333;
@@ -21,41 +28,4 @@
     text-align: center;
   }
   
-  /*
-  style.css - Assignment 3 (Chapter 5 focus)
-  ----------------------------------------------------------
-  References (Chapter 5):
-    - External vs. Internal vs. Inline CSS
-    - Cascade (specificity, order)
-    - Inheritance (how child elements get parent properties)
-*/
-
-/* Example for body
-   (this might demonstrate inheritance if your <p> or <h1>
-   doesn't override these styles)
-*/
-    /* TODO: Choose a color or font family from Chapter 5 examples,
-             explain in a comment why you picked it. */
-   
-    /* e.g. background-color: #f5f5f5; (optional) */
-
-  
-  /* Example: style your <h1> externally here */
-  
-    /* TODO: pick a color or text-related property
-             that might compete with your inline or internal CSS. */
-  
-  /*
-    Add more rules if desired:
-    - Paragraphs (p)
-    - Footer
-    - etc.
-  */
-  
-  /*
-    For demonstration:
-    - Show which rules get overridden by your internal <style> block
-    - Which might get overridden by inline styles
-    - Comment your observations about the cascade and inheritance
-  */
-  
+/* Font choices are made based on the fact that they are web-safe fonts and are likely to be available on most devices with good contrast. Reference: CH. 12, pg 269 - 273*/
