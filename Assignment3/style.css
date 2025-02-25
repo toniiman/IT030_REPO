@@ -1,5 +1,5 @@
   
-    <!--Body Styles-->
+    /*Body Styles*/
   body {
     font-family: Arial, sans-serif;
     font-size: medium;
@@ -7,14 +7,14 @@
     color: #333;
   }
   
-  <!--Header Styless-->
+  /*Header Styles*/
   header {
     background: #333;
     color: #fff;
     text-align: center;
   }
     
-  <!--Footer Styless-->
+  /*Footer Styless*/
   footer {
     background: #333;
     color: #fff;
@@ -34,19 +34,16 @@
    (this might demonstrate inheritance if your <p> or <h1>
    doesn't override these styles)
 */
-body {
     /* TODO: Choose a color or font family from Chapter 5 examples,
              explain in a comment why you picked it. */
-    color: #333;
-    font-family: Arial, sans-serif;
+   
     /* e.g. background-color: #f5f5f5; (optional) */
-  }
+
   
   /* Example: style your <h1> externally here */
-  h1 {
+  
     /* TODO: pick a color or text-related property
              that might compete with your inline or internal CSS. */
-  }
   
   /*
     Add more rules if desired:
