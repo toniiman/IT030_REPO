@@ -2,64 +2,63 @@
     <!--Body Styles-->
   body {
     font-family: Arial, sans-serif;
+    font-size: medium;
     background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
   }
   
   <!--Header Styless-->
   header {
     background: #333;
     color: #fff;
-    padding: 20px 0;
     text-align: center;
   }
-  
-  header h1 {
-    font-size: 2.5em;
-  }
-  
-  <!--Navigation Styless-->
-  nav {
-    background: #444;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
-  }
-  
-  nav a:hover {
-    background: #555;
-  }
-  
-  <!--Main Styles-->
-  main {
-    padding: 20px;
-  }
-  
-  main h2 {
-    color: #444;
-    margin-bottom: 10px;
-  }
-  
-  main p {
-    margin-bottom: 15px;
-  }
-  
+    
   <!--Footer Styless-->
   footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
   }
   
   /*
+  style.css - Assignment 3 (Chapter 5 focus)
+  ----------------------------------------------------------
+  References (Chapter 5):
+    - External vs. Internal vs. Inline CSS
+    - Cascade (specificity, order)
+    - Inheritance (how child elements get parent properties)
+*/
+
+/* Example for body
+   (this might demonstrate inheritance if your <p> or <h1>
+   doesn't override these styles)
+*/
+body {
+    /* TODO: Choose a color or font family from Chapter 5 examples,
+             explain in a comment why you picked it. */
+    color: #333;
+    font-family: Arial, sans-serif;
+    /* e.g. background-color: #f5f5f5; (optional) */
   }
+  
+  /* Example: style your <h1> externally here */
+  h1 {
+    /* TODO: pick a color or text-related property
+             that might compete with your inline or internal CSS. */
+  }
+  
+  /*
+    Add more rules if desired:
+    - Paragraphs (p)
+    - Footer
+    - etc.
+  */
+  
+  /*
+    For demonstration:
+    - Show which rules get overridden by your internal <style> block
+    - Which might get overridden by inline styles
+    - Comment your observations about the cascade and inheritance
+  */
   
