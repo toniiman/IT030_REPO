@@ -1,19 +1,5 @@
   
-
-  /*Header Styles*/
-  header {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    }
-  /*Footer Styless*/
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .container {
+.container {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -27,3 +13,11 @@
     text-align: center;
   }
 /* Font choices are made based on the fact that they are web-safe fonts and are likely to be available on most devices with good contrast. Reference: CH. 12, pg 269 - 273*/
+  /*Footer Styless*/
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+  
