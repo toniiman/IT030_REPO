@@ -1,5 +1,12 @@
   
-.container {
+
+ footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+  }
+
+  container {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -13,10 +20,3 @@
     padding: 20px;
     text-align: center;
   }
-
- footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-  }
-  
