@@ -28,4 +28,17 @@ using a RGB color picker,  CH. 11 pg 251.*/
     text-align: center;
   }
   
+  .container {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+  }
+  /* The above code is used to create a grid layout for the container class. The grid-template-columns property is used to define the number of columns in the grid layout,
+  and the grid-gap property is used to define the space between the columns. */
+  .box{
+    background-color:lightblue
+    padding: 20px;
+    text-align: center;
+  }
 /* Font choices are made based on the fact that they are web-safe fonts and are likely to be available on most devices with good contrast. Reference: CH. 12, pg 269 - 273*/
