@@ -28,8 +28,8 @@
 
 /* Layout Wrapper */
 .wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   padding: 1rem;
   gap: 1.5rem; /* Adds space between main content and sidebar */
 }
@@ -66,14 +66,16 @@ footer {
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
-    .wrapper {
+    .nav {
       flex-direction: column;
       align-items: center;
     }
-    .main-content {
-      order: 2;
+    .wrapper{
+      display: flex;
+      flex-direction: column;
     }
+    .main-content,
     .sidebar {
-      order: 1;
+     width: 100%;
     }
   }
