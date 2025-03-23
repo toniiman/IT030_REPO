@@ -58,7 +58,7 @@ footer {
     text-align: center;
     font-weight:bold;
   }
-  
+
  /* Default light mode styles */
   body {
       font-family: Arial, sans-serif;
@@ -73,6 +73,29 @@ footer {
       background-color: black;
       color: white;
   }
+
+  /* Button Styling */
+button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color:orange;
+    transform: scale(1.05);
+}
+
+/* Button Active Effect */
+button:active {
+    transform: scale(0.98);
+}
 
   /* Mobile Responsiveness */
   @media (max-width: 768px) {
