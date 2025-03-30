@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Assignment 6- Adding JavaScript</title>
+  <title>Imooni | Contemporary Luxury Fashion</title>
   <link href="style3.css" type="text/css" rel="stylesheet"/>
   <script src="script2.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="nav">
@@ -15,20 +16,32 @@
   </div>
 
   <button onclick="changeTheme()">Toggle Theme</button>
-
-  <div class="wrapper">
-      <div class="main-content">
-      <h1> Home Page</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="sidebar">
-        <h2>Sidebar Content</h2>
-        <p>orem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-  </div>
-
+        <section id="home" class="hero">
+          <div class="hero-text">
+              <h1>Luxury Fashion for Every Occasion</h1>
+              <p>Discover the latest trends and timeless classics.</p>
+              <a href="#shop" class="btn">Shop Now</a>
+          </div>
+      </section>
+      
+      <section id="shop" class="collection">
+          <h2>Shop Our Collection</h2>
+          <div class="product-grid">
+              <div class="product">
+                  <img src="dress.jpg" alt="Stylish Dress">
+                  <h3>Elegant Dress</h3>
+                  <p>$49.99</p>
+                  <button class="btn">Add to Cart</button>
+              </div>
+              <div class="product">
+                  <img src="shoes.jpg" alt="Fashionable Shoes">
+                  <h3>Chic Heels</h3>
+                  <p>$59.99</p>
+                  <button class="btn">Add to Cart</button>
+              </div>
+          </div>
+      </section>
+      
   <footer>
         <p>&copy; 2025 Iman's Demo Site</p>
   </footer>
