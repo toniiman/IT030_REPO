@@ -17,5 +17,8 @@ const userInfo = {
     selectedColor: colors[colorChoice]
 };
 
-// Apply selected color to the background
-document.body.style.backgroundColor = userInfo.selectedColor;
+// Apply selected color only to the home section
+const homeSection = document.getElementById("home");
+if (homeSection) {
+    homeSection.style.backgroundColor = userInfo.selectedColor;
+}
