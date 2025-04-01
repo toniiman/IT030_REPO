@@ -136,6 +136,14 @@ footer .col{
         justify-content: center;
         cursor: pointer;
     }
+    #close{
+        position:absolute;
+        top:20px;
+        left: 30px;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+    }
     #header {
         padding: 20px 40px;
     }
