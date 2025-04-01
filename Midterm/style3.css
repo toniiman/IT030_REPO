@@ -174,8 +174,6 @@ footer .col{
         padding: 20px 40px;
     }
 }
-
-@media (max-width:477px){
     #navbar {
         width: 100%;
     }
@@ -200,6 +198,7 @@ footer .col{
         font-size: 20px;
         cursor: pointer;
     }
+    @media (max-width:477px){
     #header {
         padding: 10px 30px;
     }
