@@ -9,7 +9,7 @@ body {
     padding: 20px 80px;
     background-color: #000000;
     color: #ffffff;
-    box shadow: 0 5px 15px rgba(0, 0, 0, 0.06); 
+    box shadow: 0  5px 15px rgba(0, 0, 0, 0.06); 
     position:sticky;
     top:0;
     width:100%;
@@ -40,6 +40,10 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+#close{
+    display:none;
 }
 /*Main Styling Block*/
 #hero{
@@ -109,6 +113,9 @@ footer .col{
 
 /*Responsive Styling Block*/
 @media screen and (max-width: 768px) {
+    .section-padding {
+        padding: 40px 40px;
+    }
     #navbar {
         display: flex;
         flex-direction: column;
@@ -137,6 +144,7 @@ footer .col{
         cursor: pointer;
     }
     #close{
+        display:initial;
         position:absolute;
         top:20px;
         left: 30px;
@@ -148,13 +156,73 @@ footer .col{
         padding: 20px 40px;
     }
     #hero {
-        padding: 0 40px;
+        padding: 0 80px;
+        height:70vh;
+        background-position: 30% 30%;
     }
     #section-padding {
         padding: 50px 40px; 
     }
+    #feature{
+        justify-content: center;
+    }
     #feature .feature-box {
         width: 100%;
+        margin: 15px 15px;
+    }
+    footer {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width:477px){
+    #navbar {
+        width: 100%;
+    }
+    #navbar .li{
+        margin-bottom: 25px;
+    }
+    #navbar .toggle {
+        right:0px;
+    }
+    #mobile{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    #close{
+        display:initial;
+        position:absolute;
+        top:20px;
+        left: 30px;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    #header {
+        padding: 10px 30px;
+    }
+    #hero {
+        padding: 0 20px;
+        height:70vh;
+        background-position: 55% ;
+    }
+    #hero .h2 {
+        font-size: 30px;
+    }
+    #hero .h4{
+        font-size: 20px;
+    } 
+    #section-padding {
+        padding: 20px;  
+    }
+    #feature{
+        justify-content: center;
+    }
+    #feature .feature-box {
+        width: 100%;
+        margin: 15px 15px;
     }
     footer {
         padding: 20px 40px;
