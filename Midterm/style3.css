@@ -9,7 +9,7 @@ body {
     padding: 20px 80px;
     background-color: #000000;
     color: #ffffff;
-    box shadow: 0  5px 15px rgba(0, 0, 0, 0.06); 
+    box-shadow: 0  5px 15px rgba(0, 0, 0, 0.06); 
     position:sticky;
     top:0;
     width:100%;
