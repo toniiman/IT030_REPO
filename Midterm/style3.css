@@ -51,9 +51,9 @@ body {
 } 
 
 #sidebar {
-    position:fixed;
-    top:0;
-    right: -100%;
+    position: fixed;
+    top: 0;
+    right: -250px;
     width: 250px;
     height: 100vh;
     background-color: black;
@@ -96,8 +96,12 @@ body {
 
 /* Hamburger Icon */
 #mobile {
-    display: none;
+    display: block;
     cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .hamburger {
