@@ -93,6 +93,26 @@ body {
     border-radius: 4px;
     margin: 15px 0;  
 }
+/*New Styling Block*/
+#page-header{
+    background-image:url(images/newinbackground.jpg);
+    height: 40vh;
+    width:100%;
+    background-size: cover;
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+    padding:14px;
+}
+
+
+
+#page-header h2{
+    color: skyblue;
+    font-size: 40px;
+    font-weight: bold;
+}
 
 /*Footer Styling Block*/
 footer {
