@@ -112,7 +112,7 @@ body {
     gap: 20px; /* Space between feature boxes */
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
     max-width: 1200px; /* Prevents stretching too wide */
-    margin: 0 auto; /* Centers the section */
+    margin: 0 auto; /* Centers the section */;
 }
 
 .feature-box {
@@ -193,36 +193,53 @@ body {
 
 /*Footer Styling Block*/
 footer {
-    display: flex;
-    justify-content: space-between;
     padding: 20px;
     background-color: #000000;
     color: #ffffff;
-    flex-wrap: wrap; /* Allows content to wrap if the screen is small */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Each column container */
-footer .footer-column {
+.footer-container{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 20px; /* Adds space between columns */
-}
+    justify-content: space-evenly;
+    align-items:center;
+    flex-wrap:wrap;
+    width: 100%;
+    max-width: 1200px; /* Prevents stretching too wide */
+    margin: 0 auto; /* Centers the section */
 
-/* Remove margin from last column */
-footer .footer-column:last-child {
-    margin-right: 0;
+}
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
 }
 
 /* Social icons styling */
 footer .social {
     display: flex;
-    gap: 10px; /* Space between icons */
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+}
+.social img {
+    max-width: 30px;  /* Limits size */
+    height: auto;  /* Maintains aspect ratio */
+}
+.payment-img {
+    width: 200px;  /* Adjust this value as needed */
+    height: auto;  /* Maintains aspect ratio */
 }
 
 /* Styling for copyright text */
 footer .copyright {
+    text-align: center;
     margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+    width: 100%;
 }
 
 /*Responsive Styling Block*/
