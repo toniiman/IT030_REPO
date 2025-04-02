@@ -1,13 +1,13 @@
 const hamburger = document.querySelector(".hamburger");
-const navbar = document.getElementById("navbar");
+const sidebar = document.getElementById("sidebar");
 const close = document.getElementById("close");
 
-// Open menu when hamburger is clicked
+// Open sidebar menu when hamburger is clicked
 hamburger.addEventListener("click", () => {
-    navbar.classList.toggle("show");
+    sidebar.classList.toggle("show");
 });
 
-// Close menu when close button is clicked
+// Close sidebar when close button is clicked
 close.addEventListener("click", () => {
-    navbar.classList.remove("show");
+    sidebar.classList.remove("show");
 });
