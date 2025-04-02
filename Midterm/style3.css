@@ -244,6 +244,7 @@ footer {
 footer .social {
     display: flex;
     justify-content: center;
+    padding: 10px 0;
     gap: 15px; /* Space between icons */
 }
 .social img {
@@ -251,7 +252,7 @@ footer .social {
     height: auto;  /* Maintains aspect ratio */
 }
 .payment-img {
-    width: 200px;  /* Adjust this value as needed */
+    width: 230px;  /* Adjust this value as needed */
     height: auto;  /* Maintains aspect ratio */
 }
 
