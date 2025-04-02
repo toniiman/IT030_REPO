@@ -63,13 +63,13 @@ body {
 }
 /*Main Styling Block*/
 #hero{
-    background-image: url('hero1.avif');
+    background-image: url('hero2.avif');
     /*!-- Image credit: Photo by JSB Co. on Unsplash (https://unsplash.com/photos/a-close-up-of-a-blue-cloth-texture-NFH3r9eEkfk)*/
-    height:100vh;
+    height: 80vh;
     width:100%;
     background-position: top 35% right 0;
     background-size:cover;
-    padding: 0 80px;
+    padding: 14px;
     display: flex;
     flex-flow: column;
     justify-content: center;
