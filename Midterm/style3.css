@@ -75,7 +75,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-#hero h2 {
+#hero h1{
     padding-bottom: 15px;
     color: #ffffff;
 }
@@ -133,9 +133,32 @@ body {
 }
 
 /*New In Styling Block*/
+#newin-header{
+    background-image:url(parodiso.avif);
+    height: 80vh;
+    width:100%;
+    background-size: cover;
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+    padding:14px;
+}
+
+#newin-header h2{
+    color:white;
+    font-size: 40px;
+    font-weight: bold;
+}
+#newin-header h4{
+    color:black;
+    font-size: 40px;
+    font-weight: bold;
+}
+/*Best Sellers Styling Block*/
 #page-header{
-    background-image:url(images/newinbackground.jpg);
-    height: 40vh;
+    background-image:url(bestseller-banner.avif) /*Photo by Ben Iwara on Unsplash*/;
+    height: 80vh;
     width:100%;
     background-size: cover;
     display:flex;
@@ -146,11 +169,10 @@ body {
 }
 
 #page-header h2{
-    color: skyblue;
+    color: white;
     font-size: 40px;
     font-weight: bold;
 }
-
 /*About Styling Block*/
 #about-head img{
     width:50%;
