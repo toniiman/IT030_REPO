@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     const sidebar = document.getElementById("sidebar");
@@ -13,4 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.classList.remove("show");
     });
 });
+
+
 
