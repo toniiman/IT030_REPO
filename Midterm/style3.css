@@ -216,11 +216,13 @@ body {
     align-items: center;
 }
 #hero h1{
-    padding-bottom: 15px;
+    font-size: 50px;
+    font-weight: bold;
     color: #ffffff;
 }
 #hero h4{
-    color:yellow;
+    color: white;
+    font-weight: bold;
 }
 #hero button {
     padding: 14px 80px 14px 80px;
