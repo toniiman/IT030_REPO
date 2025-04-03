@@ -4,16 +4,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById("sidebar");
     const close = document.getElementById("close");
 
-    // Open sidebar menu when hamburger is clicked
-    hamburger.addEventListener("click", () => {
-        sidebar.classList.toggle("show");
-    });
+    function isMobile() {
+        return window.matchMedia("(max-width: 768px)").matches;
+    }
+
+    function toggleSidebar() {
+        if (isMobile()) {
+            sidebar.classList.toggle("show");
+        }
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove("show");
+    }
+
+    // Open sidebar only on mobile
+    hamburger.addEventListener("click", toggleSidebar);
 
     // Close sidebar when close button is clicked
-    close.addEventListener("click", () => {
-        sidebar.classList.remove("show");
+    close.addEventListener("click", closeSidebar);
+
+    // Close sidebar if screen resizes to desktop
+    window.addEventListener("resize", () => {
+        if (!isMobile()) {
+            closeSidebar();
+        }
     });
 });
-
 
 

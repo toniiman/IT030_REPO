@@ -94,7 +94,9 @@ body {
 }
 
 /* Hamburger Icon */
-
+#mobile{
+    display: none;
+}
 .hamburger {
     width: 30px;
     height: 25px;
