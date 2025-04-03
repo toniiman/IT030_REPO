@@ -20,7 +20,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); 
     position: sticky;
     top: 0;
-    width: 100%; /* Prevents stretching beyond viewport */
+    width: 100vw; /* Prevents stretching beyond viewport */
     max-width: 1300px; /* Prevents navbar from being too wide */
     margin: 0 auto; /* Centers navbar */
 }
