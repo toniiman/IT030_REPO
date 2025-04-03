@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("The first color in the array is:", colors[0]);
 
-    const userName = prompt("What is your name?");
+    const userName = prompt("Please Enter Your Name:");
     let colorChoice = prompt("Pick a background color: 0 for grey, 1 for yellow, 2 for green");
 
     // Ensure input is a valid index
