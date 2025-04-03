@@ -205,7 +205,7 @@ body {
 #hero{
     background-image: url('hero2.avif');
     /*!-- Image credit: Photo by Ben Iwara(https://unsplash.com/photos/two-women-looking-at-clothes-in-a-clothing-store-sFLPKZv4Bzg)*/
-    height: 80vh;
+    height: 100vh;
     width:100%;
     background-position: top 35% right 0;
     background-size:cover;
