@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
-<script src="script2.js"></script>
+
 <body>
   <section id="header">
     <a href="#"><img src="logo1.png" class="logo" alt="black and blue logo of the brand" width="200"></a>
@@ -23,7 +23,16 @@
         <li><a href="newin.html">New In</a></li>
         <li><a href="bestsellers.html">Bestsellers</a></li>
         <li><a href="about.html" >About</a></li> 
-      </ul>
+        <li>
+          <!-- Currency Selector -->
+          <select id="currency-selector">
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+              <option value="GBP">£ GBP</option>
+              <option value="NGN">₦ NGN</option>
+          </select>
+        </li>
+       </ul>
     </div>
   </section>
 
@@ -49,19 +58,38 @@
   </nav>
   </section>
 
+  <!-- Signup Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <img src="fashion.avif" alt="Fashion model" class="popup-image">
+        <div class="popup-text">
+            <h2>Get 10% Off Your First Order!</h2>
+            <p>Sign up for our mailing list and receive exclusive offers.</p>
+            <form id="signup-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Get My Discount</button>
+            </form>
+        </div>
+    </div>
+</div>
+
   <section id="hero">
     <h1>Shop Parodiso</h1>
     <h4>Luxury Guaranteed</h4>
-    <p>Authentic African prints, designed and made in Africa.</p>
+    <article>Authentic African prints, designed and made in Africa.</article>
     <button class="btn"><a href="newin.html">Shop Now</a></button>
   </section>
 
   <section id="features" class="section-padding">
     <div class="feature-container">
     <div class="feature-box">
+      <div class="product">
       <img src="feature1.jpg" alt="model wearing an african print dress">
       <h3>Parodiso Collection</h3>
-      <p>Shop our latest collection of summer dresses.</p>
+      <p class="price" data-price="100">Price: $100</p>
+    </div>
+    
     </div>
 
     <div class="feature-box">
@@ -107,5 +135,6 @@
         </div>
     </div>
   </footer>
+  <script src="script2.js"></script>
 </body>
 </html>
