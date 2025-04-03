@@ -61,12 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.querySelector(".close");
     const form = document.getElementById("signup-form");
 
-    // Show the popup after 3 seconds
+    // Show the popup after 2 seconds
     setTimeout(() => {
         popup.style.display = "flex";
     }, 2000);
 
-    // Close the popup when clicking the "X"
+    // Close the popup after user clicks the "X"
     closeBtn.addEventListener("click", () => {
         popup.style.display = "none";
     });
@@ -95,11 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const currencySelector = document.getElementById("currency-selector");
     const prices = document.querySelectorAll(".price");
 
-    // Currency exchange rates (static example, ideally fetched from API)
+    // Currency exchange rates
     const exchangeRates = {
         "USD": 1,      // Base price in USD
         "EUR": 0.92,   // Example conversion rate
-        "GBP": 0.78    // Example conversion rate
+        "GBP": 0.78,    // Example conversion rate
+        "NGN": 1500,  // Example conversion rate
     };
 
     // Function to update prices
