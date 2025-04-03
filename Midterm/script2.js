@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Update the price display
             let currencySymbol = selectedCurrency === "USD" ? "$" :
                                  selectedCurrency === "EUR" ? "€" : "£";
+                                 selectedCurrency === "NGN" ? "NGN" : "NGN";
             
             priceElement.innerHTML = `Price: ${currencySymbol}${convertedPrice}`;
         });
