@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%; /* Adjusted for better responsiveness */
+     /* Adjusted for better responsiveness */
     background-color: #000000;
     color: #ffffff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); 
