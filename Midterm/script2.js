@@ -53,6 +53,7 @@ function getCookie(name) {
     const theme = getCookie('theme') || 'light';
     
     console.log("Applying theme:", theme);
+  }
   
     // Set welcome message
     const welcome = document.getElementById("welcome-message");
