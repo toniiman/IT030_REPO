@@ -97,12 +97,33 @@ if (changeBtn) {
 }
 
 // --- First-time check ---
-if (!getPreference('name') || !getPreference('theme')) {
+const name = getPreference('name');
+const theme = getPreference('theme');
+
+if (!name || !theme) {
+  promptPreferences(); // first-time setup
+} else {
+  loadPreferences();   // returning user setup
+
+  // Only greet once per actual page load
+  if (!sessionStorage.getItem('greeted')) {
+    alert(`Welcome back, ${name}!`);
+    sessionStorage.setItem('greeted', 'true');
+  }
+}
+
+if (!name || !theme) {
   promptPreferences();
 } else {
   loadPreferences();
+
+  // Only greet once per actual page load
+  if (!sessionStorage.getItem('greeted')) {
+    alert(`Welcome back, ${name}!`);
+    sessionStorage.setItem('greeted', 'true');
+  }
 }
-  
+
 // Function to show the popup
 document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup");
