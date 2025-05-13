@@ -126,40 +126,43 @@ if (!name || !theme) {
 
 // Function to show the popup
 document.addEventListener("DOMContentLoaded", function () {
-    const popup = document.getElementById("popup");
-    const closeBtn = document.querySelector(".close");
-    const form = document.getElementById("signup-form");
+  const popup = document.getElementById("popup");
+  const closeBtn = document.querySelector(".close");
+  const form = document.getElementById("signup-form");
 
-    // Show the popup after 2 seconds
-    setTimeout(() => {
-        popup.style.display = "flex";
-    }, 2000);
+  // ✅ Show the popup only once per session
+  if (!sessionStorage.getItem("discountPopupShown")) {
+      setTimeout(() => {
+          popup.style.display = "flex";
+          sessionStorage.setItem("discountPopupShown", "true"); // Mark as shown
+      }, 2000);
+  }
 
-    // Close the popup after user clicks the "X"
-    closeBtn.addEventListener("click", () => {
-        popup.style.display = "none";
-    });
+  // Close the popup after user clicks the "X"
+  closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+  });
 
-    // Handle form submission
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const email = document.getElementById("email").value;
+  // Handle form submission
+  form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
 
-        if (email) {
-            alert("Thank you for signing up! Your 10% off code is: WELCOME10");
-            popup.style.display = "none"; // Close popup
-        }
-    });
+      if (email) {
+          alert("Thank you for signing up! Your 10% off code is: WELCOME10");
+          popup.style.display = "none"; // Close popup
+      }
+  });
 
-    // Close popup when clicking outside of it
-    window.addEventListener("click", function (event) {
-        if (event.target === popup) {
-            popup.style.display = "none";
-        }
-    });
+  // Close popup when clicking outside of it
+  window.addEventListener("click", function (event) {
+      if (event.target === popup) {
+          popup.style.display = "none";
+      }
+  });
 });
 
-//
+// Currency Toggle Button
 document.addEventListener("DOMContentLoaded", function () {
     const currencySelector = document.getElementById("currency-selector");
     const prices = document.querySelectorAll(".price");
