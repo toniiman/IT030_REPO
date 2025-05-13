@@ -272,11 +272,11 @@ button {
     color: #888;
     margin-top: 0.25rem;
     text-align: center;
-    font-style: italic;
+    font-style: bold;
   }
   
   .attribution a {
-    color: #888;
+    color: black;
     text-decoration: none;
   }
   
