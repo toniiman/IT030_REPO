@@ -54,6 +54,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 15px; /* Spacing between nav items */
 }
 
@@ -327,6 +328,10 @@ button {
     background: #fff;
 }
 
+.feature-box h3 {
+    color: #000000; /* Or another solid color that works in both modes */
+  }
+  
 .feature-box img {
     width: 100%; /* Ensures image responsiveness */
     max-width: 250px; /* Keeps images a reasonable size */
