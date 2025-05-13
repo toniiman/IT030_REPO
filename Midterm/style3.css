@@ -1,5 +1,14 @@
 body {
     font-family: 'Old English Text MT', 'Times New Roman', serif;
+    body.dark {
+        background-color: #121212;
+        color: #f1f1f1;
+      }
+      
+      body.light {
+        background-color: #ffffff;
+        color: #121212;
+      }
 }
 /* Global fix to prevent horizontal scrolling */
 * {
