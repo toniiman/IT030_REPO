@@ -1,15 +1,29 @@
 body {
     font-family: 'Old English Text MT', 'Times New Roman', serif;
-    body.dark {
-        background-color: #121212;
-        color: #f1f1f1;
-      }
-      
-      body.light {
-        background-color: #ffffff;
-        color: #121212;
-      }
 }
+
+body.dark {
+    background-color: #121212 !important;
+    color: #f1f1f1 !important;
+}
+
+body.light {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+}
+
+#theme-toggle {
+    margin-top: 20px;
+    transform: scale(1.2);
+}
+
+button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+    
 /* Global fix to prevent horizontal scrolling */
 * {
     box-sizing: border-box;

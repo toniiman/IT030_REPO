@@ -34,47 +34,96 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Function to get cookie by name
 function getCookie(name) {
-  const cookies = document.cookie.split('; ');
-  for (let c of cookies) {
-    const [key, value] = c.split('=');
-    if (key === name) return decodeURIComponent(value);
+    const cookies = document.cookie.split('; ');
+    for (let c of cookies) {
+      const [key, value] = c.split('=');
+      if (key === name) return decodeURIComponent(value);
+    }
+    return null;
   }
-  return null;
-}
-
-// Function to set a cookie
-function setCookie(name, value, days = 7) {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
-}
-
-// Get user preferences
-let userName = getCookie('name');
-let userTheme = getCookie('theme');
-
-// If not present, prompt user and set cookies
-if (!userName || !userTheme) {
-  userName = prompt("What's your name?");
-  userTheme = prompt("Do you prefer dark or light mode?").toLowerCase();
-
-  // Fallback to light if input is invalid
-  if (userTheme !== 'dark' && userTheme !== 'light') {
-    userTheme = 'light';
+  
+  function setCookie(name, value, days = 7) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
   }
+  
+  // --- Load preferences ---
+  function loadPreferences() {
+    const name = getCookie('name');
+    const theme = getCookie('theme') || 'light';
+    
+    console.log("Applying theme:", theme);
+  
+    // Set welcome message
+    const welcome = document.getElementById("welcome-message");
+    if (name) {
+      welcome.textContent = `Welcome back, ${name}`;
+    }
 
-  setCookie('name', userName);
-  setCookie('theme', userTheme);
-}
-
-// Show greeting
-const welcome = document.getElementById("welcome-message");
-if (welcome && userName) {
-  welcome.textContent = `Welcome back, ${userName}`;
-}
-
-// Apply theme
-document.body.classList.add(userTheme === 'dark' ? 'dark' : 'light');
-
+    // Apply theme
+function applyTheme(theme) {
+    // Safety fallback in case theme is not valid
+    if (theme !== 'dark' && theme !== 'light') {
+      theme = 'light';
+      setCookie('theme', theme);
+    }
+  
+    // Remove existing theme classes and apply the selected one
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(theme);
+  
+    // Set toggle switch if it exists
+    const toggle = document.getElementById("theme-toggle");
+    if (toggle) toggle.checked = theme === 'dark';
+  }
+  
+  // Load preferences on page load or update
+  function loadPreferences() {
+    const name = getCookie('name');
+    const theme = getCookie('theme');
+  
+    // Set welcome message
+    const welcome = document.getElementById("welcome-message");
+    if (welcome && name) {
+      welcome.textContent = `Welcome back, ${name}`;
+    }
+  
+    applyTheme(theme);
+  }
+  
+  // --- Prompt and update preferences ---
+  function promptPreferences() {
+    const name = prompt("What's your name?");
+    let theme = prompt("Do you prefer dark or light mode?").toLowerCase();
+  
+    if (theme !== 'dark' && theme !== 'light') theme = 'light';
+  
+    setCookie('name', name);
+    setCookie('theme', theme);
+    loadPreferences();
+  }
+  
+  // --- Toggle theme ---
+  const toggle = document.getElementById("theme-toggle");
+  if (toggle) {
+    toggle.addEventListener("change", function () {
+      const newTheme = this.checked ? 'dark' : 'light';
+      setCookie('theme', newTheme);
+      applyTheme(newTheme);
+    });
+  }
+  
+  // --- Change preferences button ---
+  const changeBtn = document.getElementById("change-preferences");
+  if (changeBtn) {
+    changeBtn.addEventListener("click", promptPreferences);
+  }
+  
+  // --- On page load ---
+  loadPreferences();
+  
+  
+// Function to show the popup
 document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup");
     const closeBtn = document.querySelector(".close");
@@ -109,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+//
 document.addEventListener("DOMContentLoaded", function () {
     const currencySelector = document.getElementById("currency-selector");
     const prices = document.querySelectorAll(".price");
