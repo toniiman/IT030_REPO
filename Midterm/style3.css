@@ -265,7 +265,24 @@ button {
     font-size: 14px;
     cursor: pointer;
 }
-
+/* Photo Cred Styling */
+.attribution {
+    font-size: 10pt;
+    color: #888;
+    margin-top: 0.25rem;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .attribution a {
+    color: #888;
+    text-decoration: none;
+  }
+  
+  .attribution a:hover {
+    text-decoration: underline;
+  }
+  
 /* Product Price Styling */
 .product {
     margin: 20px;
@@ -363,9 +380,9 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Ensures space between text & image */
-    width: 80%; /* Adjust width for layout */
+    width: 90%; /* Adjust width for layout */
     margin: 0 auto;
-    padding: 20px;
+    padding:40px 20px;
     gap: 20px; /* Adds spacing between elements */
 }
 
@@ -373,7 +390,8 @@ button {
 #about-head img {
     width: 50%; /* Make image take half of the container */
     height: auto;
-}
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}  
 
 /* About Text Styling */
 #about-text {
