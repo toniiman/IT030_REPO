@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Function to have preferences in local storage
+// --- Local Storage Helpers ---
 function setPreference(key, value) {
   localStorage.setItem(key, value);
 }
@@ -41,7 +42,7 @@ function getPreference(key) {
   return localStorage.getItem(key);
 }
 
-// --- Apply theme to body ---
+// --- Apply theme to body and toggle switch ---
 function applyTheme(theme) {
   if (theme !== 'dark' && theme !== 'light') {
     theme = 'light'; // fallback
@@ -52,23 +53,25 @@ function applyTheme(theme) {
   document.body.classList.add(theme);
 
   const toggle = document.getElementById("theme-toggle");
-  if (toggle) toggle.checked = theme === 'dark';
+  if (toggle) {
+    toggle.checked = theme === 'dark';
+  }
 }
 
-// --- Load and apply preferences ---
+// --- Load preferences (theme + name) ---
 function loadPreferences() {
   const name = getPreference('name');
   const theme = getPreference('theme');
+
+  applyTheme(theme);
 
   const welcome = document.getElementById("welcome-message");
   if (name && welcome) {
     welcome.textContent = `Welcome back, ${name}`;
   }
-
-  applyTheme(theme);
 }
 
-// --- Prompt and update preferences ---
+// --- Prompt for preferences if missing ---
 function promptPreferences() {
   const name = prompt("What's your name?");
   let theme = prompt("Do you prefer dark or light mode?").toLowerCase();
@@ -80,49 +83,36 @@ function promptPreferences() {
   loadPreferences();
 }
 
-// --- Theme toggle switch ---
-const toggle = document.getElementById("theme-toggle");
-if (toggle) {
-  toggle.addEventListener("change", function () {
-    const newTheme = this.checked ? 'dark' : 'light';
-    setPreference('theme', newTheme);
-    applyTheme(newTheme);
-  });
-}
-
-// --- "Change Preferences" button ---
-const changeBtn = document.getElementById("change-preferences");
-if (changeBtn) {
-  changeBtn.addEventListener("click", promptPreferences);
-}
-
-// --- First-time check ---
-const name = getPreference('name');
-const theme = getPreference('theme');
-
-if (!name || !theme) {
-  promptPreferences(); // first-time setup
-} else {
-  loadPreferences();   // returning user setup
-
-  // Only greet once per actual page load
-  if (!sessionStorage.getItem('greeted')) {
-    alert(`Welcome back, ${name}!`);
-    sessionStorage.setItem('greeted', 'true');
+// --- DOM Ready ---
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("theme-toggle");
+  if (toggle) {
+    toggle.addEventListener("change", function () {
+      const newTheme = this.checked ? 'dark' : 'light';
+      setPreference('theme', newTheme);
+      applyTheme(newTheme);
+    });
   }
-}
 
-if (!name || !theme) {
-  promptPreferences();
-} else {
-  loadPreferences();
-
-  // Only greet once per actual page load
-  if (!sessionStorage.getItem('greeted')) {
-    alert(`Welcome back, ${name}!`);
-    sessionStorage.setItem('greeted', 'true');
+  const changeBtn = document.getElementById("change-preferences");
+  if (changeBtn) {
+    changeBtn.addEventListener("click", promptPreferences);
   }
-}
+
+  const name = getPreference('name');
+  const theme = getPreference('theme');
+
+  if (!name || !theme) {
+    promptPreferences();
+  } else {
+    loadPreferences();
+
+    if (!sessionStorage.getItem('greeted')) {
+      alert(`Welcome back, ${name}!`);
+      sessionStorage.setItem('greeted', 'true');
+    }
+  }
+});
 
 // Function to show the popup
 document.addEventListener("DOMContentLoaded", function () {
@@ -149,6 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = document.getElementById("email").value;
 
       if (email) {
+        // GA4 CTA tracking
+        gtag('event', 'CTR', {
+          event_category: 'callToAction',
+          event_label: 'Get My Discount'
+      });
           alert("Thank you for signing up! Your 10% off code is: WELCOME10");
           popup.style.display = "none"; // Close popup
       }
