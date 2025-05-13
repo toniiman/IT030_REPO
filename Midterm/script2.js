@@ -32,97 +32,76 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Function to get cookie by name
-function getCookie(name) {
-    const cookies = document.cookie.split('; ');
-    for (let c of cookies) {
-      const [key, value] = c.split('=');
-      if (key === name) return decodeURIComponent(value);
-    }
-    return null;
-  }
-  
-  function setCookie(name, value, days = 7) {
-    const expires = new Date(Date.now() + days * 864e5).toUTCString();
-    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
-  }
-  
-  // --- Load preferences ---
-  function loadPreferences() {
-    const name = getCookie('name');
-    const theme = getCookie('theme') || 'light';
-    
-    console.log("Applying theme:", theme);
-  }
-  
-    // Set welcome message
-    const welcome = document.getElementById("welcome-message");
-    if (name) {
-      welcome.textContent = `Welcome back, ${name}`;
-    }
+// Function to have preferences in local storage
+function setPreference(key, value) {
+  localStorage.setItem(key, value);
+}
 
-    // Apply theme
+function getPreference(key) {
+  return localStorage.getItem(key);
+}
+
+// --- Apply theme to body ---
 function applyTheme(theme) {
-    // Safety fallback in case theme is not valid
-    if (theme !== 'dark' && theme !== 'light') {
-      theme = 'light';
-      setCookie('theme', theme);
-    }
-  
-    // Remove existing theme classes and apply the selected one
-    document.body.classList.remove("light", "dark");
-    document.body.classList.add(theme);
-  
-    // Set toggle switch if it exists
-    const toggle = document.getElementById("theme-toggle");
-    if (toggle) toggle.checked = theme === 'dark';
+  if (theme !== 'dark' && theme !== 'light') {
+    theme = 'light'; // fallback
+    setPreference('theme', theme);
   }
-  
-  // Load preferences on page load or update
-  function loadPreferences() {
-    const name = getCookie('name');
-    const theme = getCookie('theme');
-  
-    // Set welcome message
-    const welcome = document.getElementById("welcome-message");
-    if (welcome && name) {
-      welcome.textContent = `Welcome back, ${name}`;
-    }
-  
-    applyTheme(theme);
-  }
-  
-  // --- Prompt and update preferences ---
-  function promptPreferences() {
-    const name = prompt("What's your name?");
-    let theme = prompt("Do you prefer dark or light mode?").toLowerCase();
-  
-    if (theme !== 'dark' && theme !== 'light') theme = 'light';
-  
-    setCookie('name', name);
-    setCookie('theme', theme);
-    loadPreferences();
-  }
-  
-  // --- Toggle theme ---
+
+  document.body.classList.remove('dark', 'light');
+  document.body.classList.add(theme);
+
   const toggle = document.getElementById("theme-toggle");
-  if (toggle) {
-    toggle.addEventListener("change", function () {
-      const newTheme = this.checked ? 'dark' : 'light';
-      setCookie('theme', newTheme);
-      applyTheme(newTheme);
-    });
+  if (toggle) toggle.checked = theme === 'dark';
+}
+
+// --- Load and apply preferences ---
+function loadPreferences() {
+  const name = getPreference('name');
+  const theme = getPreference('theme');
+
+  const welcome = document.getElementById("welcome-message");
+  if (name && welcome) {
+    welcome.textContent = `Welcome back, ${name}`;
   }
-  
-  // --- Change preferences button ---
-  const changeBtn = document.getElementById("change-preferences");
-  if (changeBtn) {
-    changeBtn.addEventListener("click", promptPreferences);
-  }
-  
-  // --- On page load ---
+
+  applyTheme(theme);
+}
+
+// --- Prompt and update preferences ---
+function promptPreferences() {
+  const name = prompt("What's your name?");
+  let theme = prompt("Do you prefer dark or light mode?").toLowerCase();
+
+  if (theme !== 'dark' && theme !== 'light') theme = 'light';
+
+  setPreference('name', name);
+  setPreference('theme', theme);
   loadPreferences();
-  
+}
+
+// --- Theme toggle switch ---
+const toggle = document.getElementById("theme-toggle");
+if (toggle) {
+  toggle.addEventListener("change", function () {
+    const newTheme = this.checked ? 'dark' : 'light';
+    setPreference('theme', newTheme);
+    applyTheme(newTheme);
+  });
+}
+
+// --- "Change Preferences" button ---
+const changeBtn = document.getElementById("change-preferences");
+if (changeBtn) {
+  changeBtn.addEventListener("click", promptPreferences);
+}
+
+// --- First-time check ---
+if (!getPreference('name') || !getPreference('theme')) {
+  promptPreferences();
+} else {
+  loadPreferences();
+}
   
 // Function to show the popup
 document.addEventListener("DOMContentLoaded", function () {
