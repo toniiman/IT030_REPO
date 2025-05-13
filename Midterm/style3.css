@@ -9,6 +9,8 @@ body {
     overflow-x: hidden; /* Ensures no horizontal scrolling */
 }
 
+/* 
+
 /* Header Styling Block */
 #header {
     display: flex;
@@ -24,7 +26,7 @@ body {
     padding: 10px 20px; /* Added padding for better spacing */
 }
 
-/* Navigation Styling Block */  
+/* Navigation Stylin  Block */                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 #navbar {
     display: flex;
     align-items: center;

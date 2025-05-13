@@ -32,29 +32,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const colors = ["#fff9f7", "#fefff7", "#f7fff7"]; // grey, yellow, green
+// Function to get cookie by name
+function getCookie(name) {
+  const cookies = document.cookie.split('; ');
+  for (let c of cookies) {
+    const [key, value] = c.split('=');
+    if (key === name) return decodeURIComponent(value);
+  }
+  return null;
+}
 
-    console.log("The first color in the array is:", colors[0]);
+// Function to set a cookie
+function setCookie(name, value, days = 7) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+}
 
-    const userName = prompt("Please Enter Your Name:");
-    let colorChoice = prompt("Pick a background color: 0 for grey, 1 for yellow, 2 for green");
+// Get user preferences
+let userName = getCookie('name');
+let userTheme = getCookie('theme');
 
-    // Ensure input is a valid index
-    colorChoice = parseInt(colorChoice);
-    if (isNaN(colorChoice) || colorChoice < 0 || colorChoice >= colors.length) {
-        alert("Invalid choice! Defaulting to grey.");
-        colorChoice = 0;
-    }
+// If not present, prompt user and set cookies
+if (!userName || !userTheme) {
+  userName = prompt("What's your name?");
+  userTheme = prompt("Do you prefer dark or light mode?").toLowerCase();
 
-    const userInfo = {
-        name: userName || "Guest",
-        selectedColor: colors[colorChoice]
-    };
+  // Fallback to light if input is invalid
+  if (userTheme !== 'dark' && userTheme !== 'light') {
+    userTheme = 'light';
+  }
 
-    // Apply selected color to the body background
-    document.body.style.backgroundColor = userInfo.selectedColor;
-});
+  setCookie('name', userName);
+  setCookie('theme', userTheme);
+}
+
+// Show greeting
+const welcome = document.getElementById("welcome-message");
+if (welcome && userName) {
+  welcome.textContent = `Welcome back, ${userName}`;
+}
+
+// Apply theme
+document.body.classList.add(userTheme === 'dark' ? 'dark' : 'light');
 
 document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup");
