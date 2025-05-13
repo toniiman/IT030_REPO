@@ -392,10 +392,16 @@ button {
 }
 
 /* Image Styling | Photo by Oswald E */
+
+#about-head img, #about-text {
+    flex: 1 1 45%; /* Shrinks nicely on smaller screens */
+    max-width: 50%;
+  }
 #about-head img {
-    width: 50%; /* Make image take half of the container */
+    width: 100%; /* Make image take half of the container */
     height: auto;
     object-fit: cover; /* Ensures image covers the area without distortion */
+    display:block;
 }  
 
 /* About Text Styling */
